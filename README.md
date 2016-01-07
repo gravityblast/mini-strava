@@ -1,6 +1,6 @@
 # MiniStrava
 
-TODO: Write a gem description
+A simple Ruby client and CLI for the Strava API.
 
 ## Installation
 
