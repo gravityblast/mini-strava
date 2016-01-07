@@ -1,0 +1,11 @@
+{
+  "id": "a1",
+  "primary": true,
+  "name": "Bike 1",
+  "resource_state": 3,
+  "distance": 428313.0,
+  "brand_name": "Giant",
+  "model_name": "TCR 1 Compact",
+  "frame_type": 3,
+  "description": "hello world"
+}

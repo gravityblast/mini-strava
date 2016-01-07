@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
+require 'mini_strava'
+require 'ripl'
+require 'delegate'
+
+class CLI < SimpleDelegator
+  attr_reader :client
+
+  def initialize
+    @client = MiniStrava::Client.new ENV['STRAVA_ACCESS_TOKEN']
+    super @client
+  end
+
+  def loop
+    Ripl.start binding: binding, prompt: 'MiniStrava CLI > '
+  end
+end
+
+begin
+  CLI.new.loop
+rescue MiniStrava::Client::BlankAccessTokenError
+  puts 'you must set the STRAVA_ACCESS_TOKEN env variable'
+end

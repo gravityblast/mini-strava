@@ -1,0 +1,45 @@
+{
+  "id": 1,
+  "resource_state": 3,
+  "firstname": "Foo",
+  "lastname": "Bar",
+  "profile_medium": "http://example.com/medium.jpg",
+  "profile": "http://example.com/profile.jpg",
+  "city": "London",
+  "state": "UK",
+  "country": "United Kingdom",
+  "sex": "M",
+  "friend": null,
+  "follower": null,
+  "premium": true,
+  "created_at": "2014-05-24T16:02:11Z",
+  "updated_at": "2014-08-03T00:09:09Z",
+  "follower_count": 5,
+  "friend_count": 7,
+  "mutual_friend_count": 0,
+  "date_preference": "%m/%d/%Y",
+  "measurement_preference": "meters",
+  "email": "foo@example.com",
+  "ftp": null,
+  "clubs": [],
+  "bikes": [{
+    "id": "10",
+    "primary": false,
+    "name": "Bike 1",
+    "resource_state": 2,
+    "distance": 268552.0
+  }, {
+    "id": "20",
+    "primary": true,
+    "name": "Bike 2",
+    "resource_state": 2,
+    "distance": 426398.0
+  }],
+  "shoes": [{
+    "id":"g449084",
+    "primary":true,
+    "name":"Nike Flex 2014 RUN Flex Blue",
+    "resource_state":2,
+    "distance":0.0}]
+}
+

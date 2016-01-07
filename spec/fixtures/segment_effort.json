@@ -1,0 +1,45 @@
+{
+  "id": 33,
+  "resource_state": 3,
+  "name": "REGENTS PARK LOOP",
+  "activity": {
+    "id": 44
+  },
+  "athlete": {
+    "id": 55
+  },
+  "elapsed_time": 656,
+  "moving_time": 656,
+  "start_date": "2014-08-11T17:48:40Z",
+  "start_date_local": "2014-08-11T18:48:40Z",
+  "distance": 4430.1,
+  "start_index": 239,
+  "end_index": 354,
+  "average_watts": 104.8,
+  "segment": {
+    "id": 6694602,
+    "resource_state": 2,
+    "name": "REGENTS PARK LOOP",
+    "activity_type": "Ride",
+    "distance": 4447.6,
+    "average_grade": 0.0,
+    "maximum_grade": 6.0,
+    "elevation_high": 45.5,
+    "elevation_low": 32.0,
+    "start_latlng": [51.535617, -0.148373],
+    "end_latlng": [51.53561, -0.148366],
+    "start_latitude": 51.535617,
+    "start_longitude": -0.148373,
+    "end_latitude": 51.53561,
+    "end_longitude": -0.148366,
+    "climb_category": 0,
+    "city": "London, UK",
+    "state": "England",
+    "country": "United Kingdom",
+    "private": false,
+    "starred": false
+  },
+  "kom_rank": null,
+  "pr_rank": null
+}
+
