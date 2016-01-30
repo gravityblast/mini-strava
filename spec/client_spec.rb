@@ -6,7 +6,6 @@ module MiniStrava
 
     context '#build_uri' do
       it 'should build uri with params' do
-        require 'pry'; binding.pry;
         params = { foo: :bar, baz: :qux }
         uri = subject.send(:build_uri, '/test', params)
 
