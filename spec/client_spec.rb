@@ -4,7 +4,7 @@ module MiniStrava
   describe Client do
     subject { Client.new 'test_token' }
 
-    context '#build_uri' do
+    describe '#build_uri' do
       it 'should build uri with params' do
         params = { foo: :bar, baz: :qux }
         uri = subject.send(:build_uri, '/test', params)
@@ -14,7 +14,7 @@ module MiniStrava
       end
     end
 
-    context 'parse_response' do
+    describe 'parse_response' do
       it 'should parse response and return an athlete model' do
         body = double('body')
         parsed_body = double('parsed_body')
@@ -24,6 +24,16 @@ module MiniStrava
         expect(JSON).to receive(:parse).with(body).and_return(parsed_body)
         expect(model_class).to receive(:build).with(parsed_body)
         subject.send :parse_response, response, model_class
+      end
+    end
+
+    describe 'perform_request' do
+      context 'not found' do
+        it 'raises a ResourceNotFound exception' do
+          not_found_response = double('response', code: 404)
+          allow(Net::HTTP).to receive(:start).and_return not_found_response
+          expect{ subject.send(:perform_request, nil, URI('http://localhost')) }.to raise_error(Client::ResourceNotFound)
+        end
       end
     end
 
@@ -39,7 +49,7 @@ module MiniStrava
       end
     end
 
-    context '#activity' do
+    describe '#activity' do
       it 'should retrieve activity' do
         body = fixture 'activity'
         response = double('response', body: body)
