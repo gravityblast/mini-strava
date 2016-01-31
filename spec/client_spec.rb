@@ -30,7 +30,7 @@ module MiniStrava
     describe 'perform_request' do
       context 'not found' do
         it 'raises a ResourceNotFound exception' do
-          not_found_response = double('response', code: 404)
+          not_found_response = double('response', code: '404')
           allow(Net::HTTP).to receive(:start).and_return not_found_response
           expect{ subject.send(:perform_request, nil, URI('http://localhost')) }.to raise_error(Client::ResourceNotFound)
         end

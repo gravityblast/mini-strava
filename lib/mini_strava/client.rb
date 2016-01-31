@@ -45,9 +45,9 @@ module MiniStrava
       end
 
       case response.code
-      when 401
+      when '401'
         raise AuthorizationError.new
-      when 404
+      when '404'
         raise ResourceNotFound.new
       else
         response
