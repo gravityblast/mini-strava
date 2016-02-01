@@ -61,6 +61,18 @@ module MiniStrava
       end
     end
 
+    describe '#segment' do
+      it 'should retrieve segment' do
+        body = fixture 'segment'
+        response = double('response', body: body)
+        expect(subject).to receive(:get).with('/segments/10').and_return(response)
+
+        segment = subject.segment 10
+        expect(segment.class).to eq(Models::Segment)
+        expect(segment.name).to eq('Up Lower Caledonian Rd')
+      end
+    end
+
     context '#activities' do
       it 'should retrieve activities' do
         body = fixture 'activities'
@@ -83,7 +95,7 @@ module MiniStrava
 
     context '401 Not Authorized' do
       it 'should raise a AuthorizationError exception' do
-        response = double('response', code: 401)
+        response = double('response', code: '401')
         expect(Net::HTTP).to receive(:start).and_return(response)
         expect do
           subject.athlete

@@ -31,6 +31,11 @@ module MiniStrava
       parse_response response, Models::Activity
     end
 
+    def segment id
+      response = get "/segments/#{id}"
+      parse_response response, Models::Segment
+    end
+
     private
 
     def get path, params={}
