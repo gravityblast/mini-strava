@@ -18,6 +18,12 @@ module MiniStrava
             }
           end
 
+          expected << {
+            name: 'map',
+            type: :Map,
+            default: nil
+          }
+
           expect(Segment.model_attributes).to match_array(expected)
         end
       end

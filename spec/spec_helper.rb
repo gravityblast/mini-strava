@@ -4,6 +4,7 @@ require_relative '../lib/mini_strava/models/athlete'
 require_relative '../lib/mini_strava/models/activity'
 require_relative '../lib/mini_strava/models/segment'
 require_relative '../lib/mini_strava/models/segment_effort'
+require_relative '../lib/mini_strava/models/map'
 require_relative '../lib/mini_strava/client'
 
 require 'json'
