@@ -16,6 +16,8 @@ module MiniStrava
       model_attr :state
       model_attr :country
       model_attr :map, type: :Map
+      model_attr :start_latlng
+      model_attr :end_latlng
     end
   end
 end

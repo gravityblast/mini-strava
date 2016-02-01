@@ -6,23 +6,25 @@ module MiniStrava
       describe 'model attributes' do
         it 'should set model attributes' do
           expected = [
+            {
+              name: 'map',
+              type: :Map,
+              default: nil
+            }
+          ]
+
+          [
             :id, :resource_state, :name,
             :activity_type, :distance, :average_grade,
             :maximum_grade, :elevation_high, :elevation_low,
-            :city, :state, :country
-          ].collect do |attr|
-            {
+            :city, :state, :country, :start_latlng, :end_latlng
+          ].each do |attr|
+            expected << {
               name: attr.to_s,
               type: Model::DefaultAttrType,
               default: nil
             }
           end
-
-          expected << {
-            name: 'map',
-            type: :Map,
-            default: nil
-          }
 
           expect(Segment.model_attributes).to match_array(expected)
         end
@@ -44,6 +46,8 @@ module MiniStrava
           expect(subject.city).to eq('London')
           expect(subject.state).to eq('Greater London')
           expect(subject.country).to eq('United Kingdom')
+          expect(subject.start_latlng).to eq([51.53377859853208, -0.11831676587462425])
+          expect(subject.end_latlng).to eq([51.54375683516264, -0.11777026578783989])
         end
       end
     end
